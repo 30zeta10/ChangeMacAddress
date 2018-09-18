@@ -1,2 +1,2 @@
 # ChangeMacAddress
-Python script for Linux, which change the Mac Address with ip link
+Python script for Linux for changing the Mac Address
