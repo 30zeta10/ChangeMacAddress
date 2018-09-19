@@ -1,7 +1,8 @@
 # ChangeMacAddress
 Python script for Linux for changing the Mac Address
-
+---------------------------------------------------------------
 Parameter
+
 -s  : Show Interface 
 
 -r  : Build a random Mac Address
@@ -9,6 +10,8 @@ Parameter
 -i  : Choose a Interface (needed to change the Mac-Address)
 
 -m  : Choose a Mac Address m and change the current one in m
+
+-----------------------------------------------------------------
 
 Example usage:
 Change the Mac Address in Interface eth0 with a random Mac Address
