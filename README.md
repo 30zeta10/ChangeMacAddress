@@ -14,13 +14,17 @@ Parameter
 -----------------------------------------------------------------
 
 Example usage:
+
 Change the Mac Address in Interface eth0 with a random Mac Address
+
 ./change_mac -i eth0 -r
 
 Change the MacAddress in eth0 into <MacAddress>
+  
 ./change_mac -i eth0 -m <MacAddress>
 
 Show the Interface from eth0
+
 ./change_mace -s -i eth0
 
   
