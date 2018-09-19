@@ -40,7 +40,7 @@ class MacChange():
     def show_interface(self):
         
         if self.iface:
-            command = "ip link show " + interface
+            command = "ip link show " +self.iface 
 
         else:
             command = "ip link show"
@@ -73,4 +73,43 @@ class MacChange():
 
 if __name__ == '__main__':
 
+    opt = OptionParser()
+    mac = MacChange()
 
+    #Adding options for change_mac to set a manuelly mac with the interface or a random mac with the interface
+    opt.add_option('-m', '--mac', help='Choose a Mac Address\n', dest='mac')
+    opt.add_option('-i', '--interface', help='Choose a Interface\n', dest='iface')
+    opt.add_option('-r', '--random', help='Build random Mac Address\n', dest='rndmac', action='store_true')
+    opt.add_option('-s', '--show', help='Show the interface\n', dest='shw', action='store_true')
+    
+    arg, args = opt.parse_args()
+        
+    #show all interfaces with -s
+    if arg.iface == None and arg.shw:
+        mac.show_interface()    
+        exit()
+
+    #show only the interfacce  -s -i <interfacename>
+    if arg.iface and arg.shw:
+        mac.set_iface(arg.iface)
+        mac.show_interface()
+        exit()
+
+    if arg.iface == None and arg.shw == None:
+        logging.error("Interface needed")
+        exit()
+
+    if arg.iface and arg.mac:
+        mac.set_iface(arg.iface)
+        mac.set_mac(arg.mac)
+        mac.change_mac()
+          
+    elif arg.iface and arg.rndmac:
+        mac.set_iface(arg.iface)
+        mac.set_mac(mac.set_random_mac())
+        mac.change_mac()
+        
+    else:
+
+        logging.error("Failure: Check parameter for interface and mac")
+        exit()
