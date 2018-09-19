@@ -19,9 +19,9 @@ Change the Mac Address in Interface eth0 with a random Mac Address
 
 ./change_mac -i eth0 -r
 
-Change the MacAddress in eth0 into <MacAddress>
+Change the MacAddress in eth0 into 3c:d9:2c:24:9f:4e
   
-./change_mac -i eth0 -m <MacAddress>
+./change_mac -i eth0 -m 3c:d9:2c:24:9f:4e
 
 Show the Interface from eth0
 
