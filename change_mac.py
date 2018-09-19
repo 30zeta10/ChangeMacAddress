@@ -110,6 +110,5 @@ if __name__ == '__main__':
         mac.change_mac()
         
     else:
-
         logging.error("Failure: Check parameter for interface and mac")
         exit()
